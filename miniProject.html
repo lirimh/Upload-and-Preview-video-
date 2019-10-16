@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <body>
+
+        <div class="form">
+            <h1>Upload Video and Preview it</h1>
+            <div id="video"></div>
+            <input type="file" accept="video/*"/>
+            <video controls autoplay></video>
+        </div>
+        
+    </body>
+
+    <script>
+            (function localFileVideoPlayer() {
+            var URL = window.URL
+            var displayVideo = function (video) {
+            var element = document.querySelector('#video')
+            }
+            var playSelectedFile = function (event) {
+            var file = this.files[0]
+            var type = file.type
+            var videoNode = document.querySelector('video')
+            var canPlay = videoNode.canPlayType(type)
+            displayVideo(video)
+
+            var fileURL = URL.createObjectURL(file)
+            videoNode.src = fileURL
+        }
+        var inputNode = document.querySelector('input')
+        inputNode.addEventListener('change', playSelectedFile, false)
+        })()
+    </script>
+</html>

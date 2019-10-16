@@ -1,0 +1,8 @@
+video, input {
+    display: block;
+    margin-top: 30px;
+}
+
+input {
+    width: 100%;       
+}
